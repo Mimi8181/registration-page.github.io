@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+:root {
+  --main-color: greenyellow ;
+  --side-color: limegreen;
+}
+
+
+body {
+  background-image: url("img/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1400px) {
+  body {
+      background-image: url("img/bg.png");
+      background-position: center top -70px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body {
+      background-image: url("img/bg.png");
+      background-position: center top -110px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  body {
+      background-image: url("img/bg.png");
+      background-position: center top -80px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+  }
+}
+
+
+
+.rusa1 {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  width: 1500px; 
+  top: calc(50% + 0.5%);
+  left: calc(50% );
+  transform: translate(-50%, -50%); 
+}
+
+.register {
+  width: 420px;
+  height: 450px;
+  z-index: 1;
+  top: 40%;
+  left: 50%;
+  padding: 20px 30px;
+  position: absolute;
+  background: rgba(102, 135, 49, 0.7);
+  color: greenyellow;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border: 1px solid greenyellow;
+  border-bottom: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.add {
+  width: 420px;
+  height: 80px;
+  top: 40%;
+  left: 50%;
+  padding: 20px 30px;
+  position: absolute;
+  background: rgba(102, 135, 49, 0.7);
+  color: greenyellow;
+  transform: translate(-50%, 280%);
+  box-sizing: border-box;
+  border: 1px solid greenyellow;
+  border-top: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.subTitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+form {
+  margin-top: 15px;
+}
+
+p {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 1px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  height: 30px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid greenyellow;
+  outline: none;
+}
+
+
+.btn {
+  height: 40px;
+  background: yellowgreen;
+  color: #fff;
+  outline: none;
+  border: 1px solid limegreen;
+  border-radius: 30px;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: limegreen;
+  border: 1px solid greenyellow;
+}
+
+.sign-in {
+  color: gray;
+}
+
+.sign-in:hover {
+  color: greenyellow;
+}
+
+
+$n: 25;
+$s: 300;
+
+$shadow: ();
+@for $i from 1 through $s {
+  $x: random(1920);
+  $y: random(1000);
+  $shadow: $shadow, ($x + px $y + px #fff) !global;
+}
+
+.star {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  box-shadow: $shadow;
+}
+
+@for $i from 1 through $n {
+  $v: random(90) + 9;
+  $h: random(250) + 50;
+  $d: random(300) / 10 + 3;
+  .meteor-#{$i} {
+    position: absolute;
+    top: $h + px;
+    left: $v * 1%;
+    width: 300px;
+    height: 1px;
+    transform: rotate(-45deg);
+    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+    animation: meteor $d + s linear infinite;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 5px;
+      border-radius: 50%;
+      margin-top: -2px;
+      background: rgba($color: #fff, $alpha: 0.7);
+      box-shadow: 0 0 15px 3px #fff;
+    }
+  }
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -300px;
+    margin-right: -300px;
+  }
+  12% {
+    opacity: 0;
+  }
+  15% {
+    margin-top: 300px;
+    margin-left: -600px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
